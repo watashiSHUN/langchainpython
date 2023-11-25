@@ -8,5 +8,5 @@ animal_type = st.sidebar.selectbox("Select your pet type", ["dog", "cat", "horse
 animal_color = st.sidebar.text_area("What is the color of your animal?", max_chars=20)
 
 if st.sidebar.button("Generate"):
-    pet_name = lch.generate_pet_name(animal_type, animal_color)
-    st.write(pet_name)
+    openai_response = lch.generate_pet_name(animal_type, animal_color)
+    st.write(openai_response["name"])
